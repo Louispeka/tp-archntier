@@ -1,0 +1,7 @@
+Exercice 1 - Envoi de fichier et commandes
+
+Réalisez la commande pour exécuter directement ls côté serveur.
+PS C:\Users\louis> ssh -i ~/.ssh/test/id_rsa user@localhost -p 2222 ls
+
+Réalisez la commande pour envoyer un fichier directement côté serveur. (Attention, il faut utiliser le flag -P pour définir le port)
+PS C:\Users\louis> scp -P 2222 .\testssh.txt user@localhost:/sshexo

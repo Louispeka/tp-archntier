@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package todo;
+
+// Définition du service Produit
+service ProductService {
+  rpc AddProduct (Product) returns (ProductResponse);
+  rpc UpdateProduct (Product) returns (ProductResponse);
+  rpc DeleteProduct (ProductId) returns (ProductResponse);
+  rpc GetProducts (Empty) returns (ProductList);
+}
+
+// Définition des messages
+message Product {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  double price = 4;
+}
+
+message ProductId {
+  string id = 1;
+}
+
+message ProductResponse {
+  string message = 1;
+}
+
+message ProductList {
+  repeated Product products = 1;
+}
+
+message Empty {}
